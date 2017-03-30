@@ -1,0 +1,49 @@
+{
+  "app_id": "your_app_id",
+  "app_secret": "your_app_secret",
+  "access_token": "your_access_token",
+
+  "account_ids": [
+  	your_list_of_accounts
+  ],
+
+  "s3_bucket": "your_s3_bucket",
+  "report_local_dir": "your_local_dir",
+  "report_remote_dir": "your_remote_dir",
+  "local_file_retention": "4",
+  "log_local_dir": "your_log_dir",
+  "status_local_dir": "your_status_remote_dir",
+  "status_remote_dir": "your_status_local_dir",
+  "insights": {
+    "fields": [
+      "account_id", "account_name", "action_values", "actions", "ad_id", "ad_name", "adset_id",
+      "adset_name", "app_store_clicks", "call_to_action_clicks", "campaign_id",
+      "campaign_name", "clicks", "date_start", "date_stop", "deeplink_clicks", "frequency", "impressions",
+      "inline_link_clicks", "inline_post_engagement", "newsfeed_avg_position", "newsfeed_clicks",
+      "newsfeed_impressions", "objective", "place_page_name", "reach", "relevance_score", "social_clicks",
+      "social_impressions", "social_reach", "social_spend", "spend", "total_action_value",
+      "total_actions", "total_unique_actions", "unique_actions", "unique_clicks", "unique_ctr",
+      "unique_impressions", "unique_inline_link_click_ctr", "unique_inline_link_clicks",
+      "unique_link_clicks_ctr", "unique_social_clicks", "unique_social_impressions", "website_clicks"
+    ],
+    "params": {
+      "level": "ad",
+      "breakdowns": ["impression_device", "placement"],
+      "action_attribution_windows": [
+        "1d_click",
+        "7d_click",
+        "28d_click",
+        "1d_view",
+        "7d_view",
+        "28d_view"
+      ],
+	  "filtering": [
+	    {
+    	  "field": "ad.effective_status",
+          "operator": "IN",
+          "value": ["ACTIVE", "PAUSED", "DELETED", "ARCHIVED", "CAMPAIGN_PAUSED", "ADSET_PAUSED"]
+	    }
+	  ]
+    }
+  }
+}
